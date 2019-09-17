@@ -1,0 +1,30 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Manager {
+- int manID
+- String sName
+- String fName
+}
+
+class Branch{
+- int branchNo
+- String name
+- Sring telNo
+}
+
+class Staff{
+- int staffID
+- String fName
+- String sName
+- String telNo
+
++ registerStaff(int, String, String, String, String)
++ getStaffName(String) : String
+}
+
+Manager -- "1..3" Branch : > manages
+Manager "0..1" -- Staff : > is a
+Staff "0..*" -- Branch : > works at
+
+@enduml
